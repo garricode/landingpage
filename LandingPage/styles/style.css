@@ -1,0 +1,149 @@
+/* Reset some default styles for better consistency */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style for the body */
+body {
+    font-family: 'Lato', sans-serif; /* Use Lato for body text */
+    background-color: #fefefe; /* Light gray background */
+    color: #333; /* Dark text color for better readability */
+    line-height: 1.6;
+}
+
+/* Style for all sections */
+section {
+    text-align: center;
+    padding: 4% 0; /* Responsive padding */
+}
+
+/* Add this CSS rule for the header to use Flexbox */
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    padding: 20px 0;
+}
+
+
+/* Add this CSS rule for the navigation bar to stay at the top */
+#nav-bar {
+    position: fixed;
+    background-color:  #000;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+
+/* Additional Flexbox styles */
+.flex-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#header-img {
+    max-width: 100%; /* Ensure the logo is responsive */
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+/* Style for the "home" section */
+#home {
+    background-color: #f9f9f9; /* Light gray background */
+}
+
+h1, h2, h3 {
+    font-family: 'Rock Salt', cursive; /* Use Rock Salt for headings */
+}
+
+
+/* Style for the "courses" section */
+#courses {
+    background-color: #ececec; /* Slightly darker gray background */
+}
+
+.module, .module-item {
+    border: 1px solid #999; /* Softer border */
+    padding: 20px;
+    margin: 10px;
+    background-color: #fff; /* White background for modules */
+}
+
+.module-list {
+    list-style: none; /* Remove bullet points from the list */
+}
+
+ul, ol {
+    list-style: none; /* Remove bullet points from all unordered and ordered lists */
+}
+
+
+/* Style for the "contact" section */
+#contact {
+    background-color: #000; /* Dark background */
+    color: #fff; /* White text for contrast */
+    padding: 4% 0; /* Responsive padding */
+}
+
+/* Style for the contact form */
+#form {
+    max-width: 25%; /* Ensure responsiveness */
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+    font-weight: bold;
+    color: #fff; /* White label text for contrast */
+}
+
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    background-color: #ff6600; /* Orange button background, like a guitar */
+    color: #fff; /* White text for contrast */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 768px) {
+    section {
+        padding: 10px 0; /* Adjust padding for smaller screens */
+    }
+
+    .module-container, .module-list {
+        flex-direction: column; /* Stack modules on smaller screens */
+        gap: 10px;
+    }
+}
+
+#video {
+    max-width: 50%; /* Ensure the video is responsive */
+    margin: 0 auto; /* Center the video horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
