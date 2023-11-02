@@ -10,12 +10,17 @@ body {
     background-color: #fefefe; /* Light gray background */
     color: #333; /* Dark text color for better readability */
     line-height: 1.6;
+    font-size: 18px; /* Increase font size for better readability */
 }
 
 /* Style for all sections */
 section {
     text-align: center;
-    padding: 4% 0; /* Responsive padding */
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Add this CSS rule for the header to use Flexbox */
@@ -28,7 +33,6 @@ section {
     padding: 20px 0;
 }
 
-
 /* Add this CSS rule for the navigation bar to stay at the top */
 #nav-bar {
     position: fixed;
@@ -36,8 +40,8 @@ section {
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 1; /* Ensure the navigation bar is on top of other content */
 }
-
 
 /* Additional Flexbox styles */
 .flex-container {
@@ -53,46 +57,96 @@ section {
 .nav-link {
     text-decoration: none;
     color: #fff;
-    margin: 0 10px;
+    margin: 0 20px; /* Increase margin for easier navigation */
     font-weight: bold;
+    font-size: 26px; /* Increase font size for better readability */
 }
 
 /* Style for the "home" section */
 #home {
     background-color: #f9f9f9; /* Light gray background */
+    padding: 10% 0; /* Adjust padding as needed */
+    font-size: 24px; /* Increase font size for better readability */
 }
 
 h1, h2, h3 {
     font-family: 'Rock Salt', cursive; /* Use Rock Salt for headings */
 }
 
-
 /* Style for the "courses" section */
 #courses {
     background-color: #ececec; /* Slightly darker gray background */
+    padding: 10% 0; /* Increase padding for a more modern layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 24px; /* Increase font size for better readability */
 }
 
-.module, .module-item {
+.module-list {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next row on smaller screens */
+    justify-content: space-around; /* Distribute items horizontally */
+}
+
+.module-item {
     border: 1px solid #999; /* Softer border */
     padding: 20px;
     margin: 10px;
     background-color: #fff; /* White background for modules */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: calc(33.33% - 20px); /* Adjust width to fit three items in a row on large screens */
+    max-width: 300px; /* Limit the maximum width of each item */
 }
 
-.module-list {
-    list-style: none; /* Remove bullet points from the list */
+.module-item img {
+    max-width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.module-item h2 {
+    font-family: 'Rock Salt', cursive; /* Use Rock Salt for headings */
+    font-size: 24px; /* Increase font size for better readability */
+}
+
+/* CSS selector for the "View Details" link */
+a.view-details-link {
+    /* Add your styling rules for this specific link here */
+    color: #0077b6; /* Example link color */
+    text-decoration: none; /* Remove the default underline */
+}
+
+a.view-details-link:hover {
+    text-decoration: underline; /* Add underline on hover for user feedback */
+}
+
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 768px) {
+    .module-list {
+        flex-direction: column; /* Stack modules on smaller screens */
+        width: calc(100% - 20px); /* Set the width to 100% for stacking on smaller screens */
+    }
 }
 
 ul, ol {
     list-style: none; /* Remove bullet points from all unordered and ordered lists */
 }
 
-
 /* Style for the "contact" section */
 #contact {
     background-color: #000; /* Dark background */
     color: #fff; /* White text for contrast */
-    padding: 4% 0; /* Responsive padding */
+    padding: 10% 0; /* Increase padding for a more modern layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 24px; /* Increase font size for better readability */
 }
 
 /* Style for the contact form */
@@ -106,6 +160,7 @@ label {
     margin: 10px 0;
     font-weight: bold;
     color: #fff; /* White label text for contrast */
+    font-size: 28px; /* Increase font size for better readability */
 }
 
 input[type="email"] {
@@ -114,6 +169,7 @@ input[type="email"] {
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 24px; /* Increase font size for better readability */
 }
 
 input[type="submit"] {
@@ -124,12 +180,13 @@ input[type="submit"] {
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
+    font-size: 28px; /* Increase font size for better readability */
 }
 
 /* Responsive design for smaller screens */
 @media screen and (max-width: 768px) {
     section {
-        padding: 10px 0; /* Adjust padding for smaller screens */
+        padding: 10% 0; /* Increase padding for a more modern layout */
     }
 
     .module-container, .module-list {
@@ -140,10 +197,57 @@ input[type="submit"] {
 
 #video {
     max-width: 50%; /* Ensure the video is responsive */
-    margin: 0 auto; /* Center the video horizontally */
+    margin: 20px 0; /* Add margin to create space between the text and the video */
     display: flex;
     justify-content: center;
     align-items: center;
+}
 
 
+/* Responsive design for smaller screens (tablet and mobile) */
+@media screen and (max-width: 768px) {
+    .module-list {
+        flex-direction: column; /* Stack modules on smaller screens */
+        justify-content: center;
+        align-items: center; /* Center items vertically and horizontally */
+    }
+
+    .module-item {
+        width: 100%; /* Full width for items on smaller screens */
+    }
+
+    /* Enlarge the "Contact" section to cover the whole screen */
+    #contact {
+        padding: 40% 0; /* Increase padding to cover more of the screen */
+    }
+}
+
+/* Responsive design for normal and larger screens */
+@media screen and (min-width: 769px) {
+    .module-list {
+        flex-direction: row; /* Reset to row layout for normal and larger screens */
+        justify-content: space-around; /* Distribute items horizontally */
+    }
+
+    .module-item {
+        width: calc(33.33% - 20px); /* Adjust width to fit three items in a row on larger screens */
+    }
+
+    /* Reset the "Contact" section's padding for normal and larger screens */
+    #contact {
+        padding: 20% 0; /* Restore the original padding for these screens */
+    }
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 768px) {
+    /* Increase spacing on smaller screens if necessary */
+    #home {
+        padding: 10% 0; /* Adjust padding for smaller screens */
+    }
+
+    /* Add spacing on smaller screens if necessary */
+    #video {
+        margin: 10px 0; /* Adjust margin for smaller screens */
+    }
 }
